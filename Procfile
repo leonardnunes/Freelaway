@@ -1,1 +1,1 @@
-web: gunicorn
+web: gunicorn freelaway.wsgi --log-file -
