@@ -1,1 +1,1 @@
-web: gunicorn freelawaypsw.wsgi
+web:gunicorn freelawaypsw.wsgi
