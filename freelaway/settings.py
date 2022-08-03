@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-# import django_heroku
+import dj_database_url
 from pathlib import Path
 
 
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m$v@rxpo@h*-^qi*4iq#(&^od+#&bj@lsnaokjr!voyhyyw-3)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # https://freelaway-free.herokuapp.com/
+DEBUG = False  # https://freelaway-free.herokuapp.com/
 
 ALLOWED_HOSTS = ['*']
 
@@ -77,12 +77,17 @@ WSGI_APPLICATION = 'freelaway.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+"""
+
+DATABASES ={
+    'default': dj_database_url.config()
 }
 
 # Password validation
