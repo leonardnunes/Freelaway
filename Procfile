@@ -1,1 +1,1 @@
-web: gunicorn freelaway.wsgiscrscr
+# web: gunicorn freelaway.wsgiscrscr
