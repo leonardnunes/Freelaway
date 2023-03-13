@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block 'head' %}
     <link rel="stylesheet" href="{% static 'jobs/css/encontrar_jobs.css' %}">
     <link rel="stylesheet" href="{% static 'jobs/css/perfil.css' %}">
@@ -81,7 +80,7 @@
                                 <button class="badge badge-primary" data-toggle="modal" data-target="#modal-job-{{job.id}}">Em criação</button>
 
                             {% elif job.status == 'NA' %}
-                                <span class="badge badge-danger"data-toggle="modal" data-target="#modal-job-{{job.id}}">Não Aprovado</span>
+                                <span class="badge badge-danger" data-toggle="modal" data-target="#modal-job-{{job.id}}">Não Aprovado</span>
 
                             {% else %}
                                 <span class="badge badge-success">Finalizado</span>
