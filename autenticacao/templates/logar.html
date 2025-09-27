@@ -16,17 +16,28 @@
                          </div>
                 {% endfor %}
             {% endif %}
-            <h1 class="titulo font-degrade borda-bottom-degrade">LOGAR</h1>
-            <br>
-            <span class="span-descricao">Nome de usuário:</span>
-            <input type="text" class="form-control input-cadastro" name="username">
-            <br>
-            <span class="span-descricao">Senha:</span>
-            <input type="password" class="form-control input-cadastro" name="password">
-            <a href="{% url 'password_reset' %}">Esqueci minha senha</a>
-            <br>
-            <input type="submit" value="LOGAR" class="btn btn-success btn-lg">
-            <a href="{% url 'cadastro' %}" class="btn btn-primary btn-lg">CADASTRO</a>
+            {% csrf_token %}
+
+                <h1 class="titulo font-degrade borda-bottom-degrade">LOGAR</h1>
+
+                <div class="form-group">
+                    <label for="id_username" class="span-descricao">Nome de usuário:</label>
+                    <input type="text" id="id_username" name="username" class="form-control input-cadastro" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_password" class="span-descricao">Senha:</label>
+                    <input type="password" id="id_password" name="password" class="form-control input-cadastro" required>
+                </div>
+
+                <div class="form-group password-reset-link">
+                    <a href="{% url 'password_reset' %}">Esqueci minha senha</a>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success btn-lg">LOGAR</button>
+                    <button type="button" onclick="window.location.href='{% url 'cadastro' %}'" class="btn btn-primary btn-lg">CADASTRO</button>
+                </div>
 
         </form>
 

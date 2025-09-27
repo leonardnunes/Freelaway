@@ -10,27 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-# import dj_database_url
 from pathlib import Path
-
-# import constants as constants
 from django.contrib.messages import constants
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-m$v@rxpo@h*-^qi*4iq#(&^od+#&bj@lsnaokjr!voyhyyw-3)'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # https://freelaway-free.herokuapp.com/
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,8 +67,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'freelaway.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
@@ -83,9 +75,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3', }
 }
 
-# Password validation
 
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -102,8 +92,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.0/topics/i18n/
 
 LANGUAGE_CODE = 'pt-br'
 
@@ -113,22 +101,18 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
-STATIC_ROOT = os.path.join('static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-# django_heroku.settings(locals())
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'templates/static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Messages(constants importadas no topo)
 
 
 MESSAGE_TAGS = {
