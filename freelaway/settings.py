@@ -12,12 +12,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-m$v@rxpo@h*-^qi*4iq#(&^od+#&bj@lsnaokjr!voyhyyw-3)'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 
